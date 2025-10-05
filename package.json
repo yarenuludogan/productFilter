@@ -1,0 +1,21 @@
+{
+  "name": "productfilter-app",
+  "version": "1.0.0",
+  "description": "Product filtering app with React frontend and Express backend",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd casestudy && npm install",
+    "build-frontend": "cd casestudy && npm run build"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yarenuludogan/productFilter.git"
+  },
+  "keywords": ["react", "express", "filtering", "products"],
+  "author": "yarenuludogan",
+  "license": "ISC"
+}
