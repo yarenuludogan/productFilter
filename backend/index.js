@@ -20,10 +20,9 @@ async function getGoldPrice() {
       }
     });
     const pricePerGram = res.data.metals.XAU / 31.1035;
-    console.log("✅ Altın fiyatı (USD/gram):", pricePerGram.toFixed(2));
     return pricePerGram;
   } catch (error) {
-    console.error("❌ Altın fiyatı alınamadı:", error.message);
+    console.error("Gold price fetch error:", error.message);
     return 60;
   }
 }
@@ -33,15 +32,6 @@ app.get("/api/products", async (req, res) => {
 
   const updatedProducts = products.map(p => {
     const hesap = (p.popularityScore + 1) * p.weight * goldPrice;
-
-    // 🔍 Log satırı: her ürünün hesaplamasını göster
-    console.log("🧮 Hesaplama:", {
-      name: p.name,
-      popularityScore: p.popularityScore,
-      weight: p.weight,
-      goldPrice,
-      hesap
-    });
 
     return {
       ...p,
@@ -54,5 +44,5 @@ app.get("/api/products", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Backend çalışıyor: http://localhost:${PORT}`);
+  console.log(`Backend running: http://localhost:${PORT}`);
 });
